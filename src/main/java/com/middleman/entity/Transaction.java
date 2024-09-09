@@ -18,7 +18,6 @@ import jakarta.persistence.Table;
 public class Transaction {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
     private Long transactionId;
 
@@ -30,7 +29,15 @@ public class Transaction {
     private Card card;
     
 
-    public Card getCard() {
+    public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Card getCard() {
 		return card;
 	}
 
@@ -76,6 +83,9 @@ public class Transaction {
 
     @Column(name = "is_fraud")
     private Boolean isFraud;
+    
+    @Column(name = "status")
+    private String status;
     
     public Transaction() {
     	

@@ -1,62 +1,60 @@
 package com.middleman.controller;
 
-import java.time.LocalTime;
+import com.middleman.dto.TransactionRequestDTO;
+import com.middleman.entity.Transaction;
+import com.middleman.kafka.TransactionProducer;
+import com.middleman.service.TransactionService;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.middleman.entity.Card;
-import com.middleman.entity.Transaction;
-import com.middleman.entity.TransactionRequestDTO;
-import com.middleman.service.CardService;
-import com.middleman.service.TransactionService;
-import java.sql.Time;
 @RestController
 @RequestMapping("/api/transactions")
 public class TransactionController {
+
     @Autowired
-    private TransactionService transactionService;
+    private TransactionProducer transactionProducer;
     
     @Autowired
-    private CardService cardService;
+    TransactionService transactionService;
     
+    @GetMapping("/{transactionID}")
+    public ResponseEntity<String> getTransaction(@PathVariable Long transactionID) {
+    	 
+    	 Transaction transaction = transactionService.findById(transactionID);
+    	return ResponseEntity.status(HttpStatus.ACCEPTED).body(transaction.getStatus());
+    }
+    
+
     @PostMapping("/process")
-    public ResponseEntity<String> processTransaction(@RequestBody TransactionRequestDTO transactionDTO) {
-    	Long cardNumber = transactionDTO.getCardNumber();
-    	Card card = cardService.findById(cardNumber);
-    	Integer cardIndex = card.getCardIndex();
-        Long userId = card.getUser().getUserId();
+    public ResponseEntity<Map<String, Object>> processTransaction(@RequestBody TransactionRequestDTO transactionDTO) {
+        // Generate a unique transaction ID
+        Long transactionId = generateTransactionId();
+        transactionDTO.setTransactionID(transactionId); // Include ID in DTO if required
 
+        // Send the transaction request to Kafka
+        transactionProducer.sendTransaction(transactionDTO);
 
-        Time sqlTime = Time.valueOf(LocalTime.now());
-        
+        // Respond with the transaction ID
+        Map<String, Object> response = new HashMap<>();
+        response.put("transactionId", transactionId);
+        response.put("message", "Transaction request received and being processed");
 
-        Transaction transaction = new Transaction();
-        transaction.setCard(card);
-        transaction.setTransactionTime(sqlTime);
-        transaction.setAmount(transactionDTO.getAmount());
-        transaction.setMerchantName(transactionDTO.getMerchantName());
-        transaction.setMerchantCity(transactionDTO.getMerchantCity());
-        transaction.setMerchantState(transactionDTO.getMerchantState());
-        transaction.setMerchantZip(transactionDTO.getMerchantZip());
-        transaction.setUseChip(true);  // This would be determined based on actual use case
-
-        transactionService.saveOrUpdateTransaction(transaction);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body("Transaction processed successfully");
-
-    }
-    
-    @GetMapping("/all")
-    public ResponseEntity<String> getallcards() {
-    	return ResponseEntity.status(HttpStatus.CREATED).body("HELLO WORLKSDJKS");
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
     }
 
-
+    private Long generateTransactionId() {
+    	Long uidLong = UUID.randomUUID().getMostSignificantBits();
+    	if (uidLong < 0) {
+    		uidLong *= -1;
+    	}
+        return  uidLong;//uuid.getMostSigBits()
+    }
 }
+
