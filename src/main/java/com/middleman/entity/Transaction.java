@@ -1,12 +1,11 @@
 package com.middleman.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Time;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
@@ -15,7 +14,9 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "transactions")
-public class Transaction {
+public class Transaction implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "transaction_id")

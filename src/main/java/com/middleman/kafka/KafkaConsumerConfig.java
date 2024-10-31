@@ -19,7 +19,7 @@ import java.util.Map;
 public class KafkaConsumerConfig {
 
     @Bean
-    public ConsumerFactory<String, TransactionRequestDTO> consumerFactory() {
+    ConsumerFactory<String, TransactionRequestDTO> consumerFactory() {
         Map<String, Object> config = new HashMap<>();
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         config.put(ConsumerConfig.GROUP_ID_CONFIG, "transaction-group");
@@ -30,7 +30,7 @@ public class KafkaConsumerConfig {
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, TransactionRequestDTO> kafkaListenerContainerFactory() {
+    ConcurrentKafkaListenerContainerFactory<String, TransactionRequestDTO> kafkaListenerContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, TransactionRequestDTO> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());

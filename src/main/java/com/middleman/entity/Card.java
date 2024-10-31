@@ -1,5 +1,6 @@
 package com.middleman.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -18,7 +19,8 @@ import jakarta.persistence.UniqueConstraint;
 	}, indexes = {
 	    @Index(name = "idx_user_id_card_index", columnList = "user_id, card_index")
 	})
-	public class Card {
+public class Card implements Serializable{
+		private static final long serialVersionUID = 1L;
 
 	    @Id
 	    @Column(name = "card_number")

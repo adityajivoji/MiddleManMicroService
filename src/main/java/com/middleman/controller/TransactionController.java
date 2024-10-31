@@ -34,19 +34,38 @@ public class TransactionController {
 
     @PostMapping("/process")
     public ResponseEntity<Map<String, Object>> processTransaction(@RequestBody TransactionRequestDTO transactionDTO) {
-        // Generate a unique transaction ID
-        Long transactionId = generateTransactionId();
-        transactionDTO.setTransactionID(transactionId); // Include ID in DTO if required
+    	String idempotencyKey = transactionDTO.getIdempotencyKey();
+        
+        // Check if idempotencyKey is null
+        if (idempotencyKey == null) {
+            Map<String, Object> response = new HashMap<>();
+            response.put("error", "Idempotency key is required.");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+        }
+
+        if (transactionService.isDuplicateTransaction(idempotencyKey)) {
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Duplicate transaction");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(response);
+        } else {
+
+        	// Mark as processed to avoid duplication
+        	Long transactionId = generateTransactionId();
+        	transactionDTO.setTransactionID(transactionId);
+        	transactionService.markTransactionAsProcessing(idempotencyKey);
 
         // Send the transaction request to Kafka
-        transactionProducer.sendTransaction(transactionDTO);
+        	transactionProducer.sendTransaction(transactionDTO);
+        
+        
 
         // Respond with the transaction ID
-        Map<String, Object> response = new HashMap<>();
-        response.put("transactionId", transactionId);
-        response.put("message", "Transaction request received and being processed");
+        	Map<String, Object> response = new HashMap<>();
+        	response.put("transactionId", transactionDTO.getTransactionID());
+        	response.put("message", "Transaction request received and being processed");
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
+        	return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
+        }
     }
 
     private Long generateTransactionId() {

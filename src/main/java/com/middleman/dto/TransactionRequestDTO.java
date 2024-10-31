@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 // Online
 public class TransactionRequestDTO implements Serializable{
 	private static final long serialVerionUID = 1L;
+	private String idempotencyKey;
 	private Long transactionID;
     private Long cardNumber;
     private String cvv;
@@ -13,8 +14,17 @@ public class TransactionRequestDTO implements Serializable{
     private BigDecimal amount;
     private String merchantName;
     private String merchantCity;
-    private String merchantState;
+    
+	private String merchantState;
     private String merchantZip;
+    
+    public String getIdempotencyKey() {
+		return idempotencyKey;
+	}
+
+	public void setIdempotencyKey(String idempotencyKey) {
+		this.idempotencyKey = idempotencyKey;
+	}
 	public Long getCardNumber() {
 		return cardNumber;
 	}
