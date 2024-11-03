@@ -1,0 +1,103 @@
+2024-11-03 19:13:13 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected.
+2024-11-03 19:14:33 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node -1 disconnected.
+2024-11-03 19:23:13 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node -1 disconnected.
+2024-11-03 19:29:39 INFO  c.m.controller.TransactionController - getting transaction7134062108440479609
+2024-11-03 19:48:41 INFO  c.m.controller.TransactionController - getting transaction7134062108440479609
+2024-11-03 19:52:42 INFO  c.m.controller.TransactionController - getting transaction7134062108440479609
+2024-11-03 20:40:40 INFO  c.m.controller.TransactionController - getting transaction7134062108440479609
+2024-11-03 20:43:28 INFO  c.m.controller.TransactionController - getting transaction7134062108440479609
+2024-11-03 21:50:29 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:30 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Cancelled in-flight FETCH request with correlation id 22849 due to node 0 being disconnected (elapsed time since creation: 213ms, elapsed time since send: 213ms, request timeout: 30000ms)
+2024-11-03 21:50:30 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 2147483647 disconnected.
+2024-11-03 21:50:30 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:30 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=19454) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:33 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:33 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:33 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:33 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:33 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:33 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 2147483647 disconnected.
+2024-11-03 21:50:33 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 2147483647 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:33 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Group coordinator DESKTOP-SIU06MR:9092 (id: 2147483647 rack: null) is unavailable or invalid due to cause: null. isDisconnected: true. Rediscovery will be attempted.
+2024-11-03 21:50:35 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:35 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:35 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:35 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:35 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:38 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:38 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:39 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:39 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:39 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:40 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:40 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:42 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:42 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:44 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:44 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:45 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:45 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:47 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:47 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:48 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:48 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:48 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:50 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:50 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:51 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:51 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:53 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:53 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:54 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:54 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:54 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:56 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:56 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:57 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:50:57 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:50:57 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:50:59 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:50:59 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:00 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:51:00 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:02 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:51:02 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:03 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:51:03 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:03 INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Error sending fetch request (sessionId=680319008, epoch=INITIAL) to node 0:
+org.apache.kafka.common.errors.DisconnectException: null
+2024-11-03 21:51:05 INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Node 0 disconnected.
+2024-11-03 21:51:05 WARN  o.apache.kafka.clients.NetworkClient - [Producer clientId=middleman-producer-1] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:05 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Revoke previously assigned partitions transaction_topic-0
+2024-11-03 21:51:06 INFO  o.s.k.l.KafkaMessageListenerContainer - transaction-group: partitions revoked: [transaction_topic-0]
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Unsubscribed all topics or patterns and assigned partitions
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-11-03 21:51:06 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Request joining group due to: consumer pro-actively leaving the group
+2024-11-03 21:51:07 INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Node 0 disconnected.
+2024-11-03 21:51:07 WARN  o.apache.kafka.clients.NetworkClient - [Consumer clientId=consumer-transaction-group-2, groupId=transaction-group] Connection to node 0 (DESKTOP-SIU06MR/192.168.1.8:9092) could not be established. Node may not be available.
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-11-03 21:51:07 INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-transaction-group-2 unregistered
+2024-11-03 21:51:07 INFO  o.s.k.l.KafkaMessageListenerContainer - transaction-group: Consumer stopped
+2024-11-03 21:51:07 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-7635"]
+2024-11-03 21:51:07 INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=middleman-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-03 21:51:07 INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2024-11-03 21:51:07 INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for middleman-producer-1 unregistered
+2024-11-03 21:51:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-03 21:51:07 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-11-03 21:51:07 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
